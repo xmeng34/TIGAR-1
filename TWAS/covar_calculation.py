@@ -119,7 +119,7 @@ parser.add_argument('--block',type=str,default = None)
 ### genotype file dir
 parser.add_argument('--geno_path',type=str,default = None)
 
-### specified input file type(vcf or doasges)
+### specified input file type(vcf or dosages)
 parser.add_argument('--geno',type=str,default = None)
 
 ### chromosome number
@@ -197,7 +197,7 @@ def thread_process(num):
             print("Format needed is not provided in input file.")
         else:
             Chrom,sampleID = CHR_Reform_vcf(CHR,args.Format,args.maf)
-    elif args.geno=='doasges':
+    elif args.geno=='dosages':
         Chrom,sampleID = CHR_Reform_DS(CHR,args.maf)
     
     Chrom = Chrom.sort_values(by='POS')
